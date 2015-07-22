@@ -16,6 +16,10 @@ nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 
+nnoremap <S-l> gt
+nnoremap <S-h> gT
+nnoremap gn :tabnew<CR>
+
 
 execute pathogen#infect()
 filetype indent plugin on
