@@ -27,6 +27,16 @@ filetype indent plugin on
 color solarized
 set background=dark
 
+function TnSpawnTmuxWindowDirOfFile()
+    let working_directory = expand('%:p:h')
+    let tmux_command = "tmux split-window -h 'cd \"" . working_directory . "\" ; bash" . "'" 
+    echo system(tmux_command)
+endfunction
+
+nnoremap <Leader>D :call TnSpawnTmuxWindowDirOfFile()<CR>
+
+"
+"
 "autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 "autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
